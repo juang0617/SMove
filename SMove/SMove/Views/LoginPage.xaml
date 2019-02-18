@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SMove.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10,20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Iniciar Sesión"
+                />
+            <Entry
+                Placeholder="Email"
+                Keyboard="Email">
+            </Entry>
+            <Entry
+                IsPassword="True"
+                Placeholder="Contraseña">
+            </Entry>
+            <ActivityIndicator>
+                
+            </ActivityIndicator>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Olvide mi contraseña"
+                TextColor="#78849E">
+            </Label>
+            <Button
+                BackgroundColor="#FFB900"
+                BorderRadius="12"
+                Text="Continuar">
+            </Button>
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
