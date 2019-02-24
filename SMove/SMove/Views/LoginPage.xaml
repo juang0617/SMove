@@ -1,38 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SMove.Views.LoginPage">
+             x:Class="SMove.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <StackLayout
+        <ScrollView
+            BindingContext="{Binding Login}">
+            <StackLayout
             Padding="10,20">
-            <Label
-                FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalOptions="Center"
-                Text="Iniciar Sesión"
-                />
-            <Entry
-                Placeholder="Email"
-                Keyboard="Email">
-            </Entry>
-            <Entry
-                IsPassword="True"
-                Placeholder="Contraseña">
-            </Entry>
-            <ActivityIndicator>
-                
-            </ActivityIndicator>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Olvide mi contraseña"
-                TextColor="#78849E">
-            </Label>
-            <Button
-                BackgroundColor="#FFB900"
-                BorderRadius="12"
-                Text="Continuar">
-            </Button>
-          
-        </StackLayout>
+
+                <Grid
+                    Padding="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        Text="Iniciar Sesión"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        Text="Registrarse"/>
+                </Grid>
+
+                <StackLayout>
+                    <Entry
+                        Placeholder="Email"
+                        Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}">
+                    </Entry>
+                    <Entry
+                        IsPassword="True"
+                        Placeholder="Contraseña"
+                        Text="{Binding Password, Mode=TwoWay}">
+                    </Entry>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="Recordarme en este dispositivo"
+                        VerticalOptions="Center"/>
+                    <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                        HorizontalOptions="End">
+                    </Switch>
+                </StackLayout>
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center">
+                    <Image Source="facebook_logo"
+                        WidthRequest="50"></Image>
+                    <Image Source="twitter_logo"
+                        WidthRequest="50"></Image>
+                </StackLayout>
+
+                <Label
+                    Margin="0,20"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Olvide mi contraseña"
+                    TextColor="#78849E">
+                </Label>
+                <StackLayout
+                    Margin="15,0">
+                    <Button
+                        BackgroundColor="#FFB900"
+                        BorderRadius="12"
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Continuar"
+                        TextColor="White">
+                    </Button>
+                </StackLayout>
+
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
+
+                </ActivityIndicator>
+            </StackLayout>
+        </ScrollView>
+
+
     </ContentPage.Content>
 </ContentPage>
