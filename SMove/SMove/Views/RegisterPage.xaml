@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SMove.Views.LoginPage"
+             x:Class="SMove.Views.RegisterPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView
-            BindingContext="{Binding Login}">
+            BindingContext="{Binding Register}">
             <StackLayout
                 Padding="10,20">
 
@@ -27,7 +27,7 @@
                     <Image
                         WidthRequest="15"
                         Grid.Row="1"
-                        Grid.Column="0"
+                        Grid.Column="1"
                         Source="Degradado"></Image>
                     <Label
                         FontSize="Large"
@@ -37,71 +37,65 @@
                         Text="Registrarse"
                         TextColor="Black"/>
                 </Grid>
-                
+
                 <StackLayout>
                     <Entry
-                        BackgroundColor="LightGray"
+                        BackgroundColor="Gray"
                         Placeholder="Email"
                         Keyboard="Email"
                         Text="{Binding Email, Mode=TwoWay}"
-                        TextColor="DarkGray">
+                        TextColor="#FFB900">
                     </Entry>
                     <Entry
-                        BackgroundColor="LightGray"
+                        BackgroundColor="Gray"
                         IsPassword="True"
                         Placeholder="Contraseña"
                         Text="{Binding Password, Mode=TwoWay}"
-                        TextColor="DarkGray">
+                        TextColor="#FFB900">
                     </Entry>
-                </StackLayout>
-                <StackLayout
-                    Orientation="Horizontal">
-                    <Label
-                        HorizontalOptions="StartAndExpand"
-                        Text="Recordarme en este dispositivo"
-                        TextColor="Black"
-                        VerticalOptions="Center"/>
-                    <Switch
-                        OnColor="#FFB900"
-                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
-                        HorizontalOptions="End">
-                    </Switch>
-                </StackLayout>
+                    <Entry
+                        BackgroundColor="Gray"
+                        Placeholder="Nombre"
+                        Text="{Binding Nombre, Mode=TwoWay}"
+                        TextColor="#FFB900">
+                    </Entry>
+                    <Entry
+                        BackgroundColor="Gray"
+                        Placeholder="Apellidos"
+                        Text="{Binding Apellidos, Mode=TwoWay}"
+                        TextColor="#FFB900">
+                    </Entry>
+                    <Picker
+                        BackgroundColor="Gray"
+                        Title="Universidad"
+                        TextColor="#FFB900">
+                        <Picker.Items>
+                            <x:String>Universidad Pontificia Bolivariana</x:String>
+                            <x:String>EAFIT</x:String>
+                            <x:String>Universidad de Antioquia</x:String>
+                            <x:String>Universidad de Medellín</x:String>
+                            <x:String>Universidad Nacional</x:String>
+                        </Picker.Items>
+                    </Picker>
 
-                <StackLayout
-                    Orientation="Horizontal"
-                    HorizontalOptions="Center">
-                    <Image Source="facebook_logo"
-                        WidthRequest="50"></Image>
-                    <Image Source="twitter_logo"
-                        WidthRequest="50"></Image>
-                </StackLayout>
-
-                <Label
-                    Margin="0,20"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Olvide mi contraseña"
-                    TextColor="#78849E">
-                </Label>
-                <StackLayout
+                    <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                    </ActivityIndicator>
+                    <StackLayout
                     Margin="15,0">
-                    <Button
+                        <Button
                         BackgroundColor="#FFB900"
                         BorderRadius="12"
-                        Command="{Binding LoginCommand}"
+                        Command="{Binding RegisterCommand}"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                         Text="Continuar"
                         TextColor="White">
-                    </Button>
+                        </Button>
+                    </StackLayout>
+                    
                 </StackLayout>
-                <ActivityIndicator
-                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
-                </ActivityIndicator>
 
             </StackLayout>
-            
         </ScrollView>
-
-
     </ContentPage.Content>
 </ContentPage>

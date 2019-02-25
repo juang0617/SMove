@@ -17,7 +17,7 @@ namespace SMove
         {
             InitializeComponent();
 
-            this.MainPage = new LoginPage();
+            this.MainPage = new NavigationPage(new EnterPage());
         }
         #endregion
 

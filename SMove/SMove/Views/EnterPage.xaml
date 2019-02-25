@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SMove.Views.EnterPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundImage="FondoEnter"
+             Title="Bienvenido"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="End"
+            BindingContext="{Binding Enter}">
+            <Label
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                FontSize="60"
+                Text="Ingresa"
+                TextColor="White"/>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="End"
+                FontSize="Large"
+                Text="A una nueva forma de recorrer la ciudad"
+                TextColor="White"/>
+            <StackLayout
+                VerticalOptions="EndAndExpand"
+                Margin="20,50">
+                <Button
+                        BackgroundColor="#FFB900"
+                        BorderRadius="12"
+                        Command="{Binding RegisCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Registrarse"
+                        TextColor="White">
+                </Button>
+                <Button
+                        BackgroundColor="#FFB900"
+                        BorderRadius="12"
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Iniciar Sesión"
+                        TextColor="White">
+                </Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

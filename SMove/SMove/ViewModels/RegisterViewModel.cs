@@ -1,6 +1,4 @@
-﻿
-
-namespace SMove.ViewModels
+﻿namespace SMove.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
     using System;
@@ -9,13 +7,13 @@ namespace SMove.ViewModels
     using Xamarin.Forms;
     using Views;
 
-    public class LoginViewModel : BaseViewModel
+    public class RegisterViewModel : BaseViewModel
     {
-
-
         #region Atributos
         private string email;
         private string password;
+        private string nombre;
+        private string apellidos;
         private bool isRunning;
         private bool isEnabled;
         #endregion
@@ -31,7 +29,16 @@ namespace SMove.ViewModels
             get { return this.password; }
             set { SetValue(ref this.password, value); }
         }
-
+        public string Nombre
+        {
+            get { return this.nombre; }
+            set { SetValue(ref this.nombre, value); }
+        }
+        public string Apellidos
+        {
+            get { return this.apellidos; }
+            set { SetValue(ref this.apellidos, value); }
+        }
         public bool IsRunning
         {
             get { return this.isRunning; }
@@ -46,53 +53,27 @@ namespace SMove.ViewModels
         #endregion
 
         #region Constructores
-        public LoginViewModel()
+        public RegisterViewModel()
         {
             this.IsRemembered = true;
             this.IsEnabled = true;
         }
         #endregion
         #region Comandos
-        public ICommand LoginCommand
+        public ICommand RegisterCommand
         {
             get
             {
-                return new RelayCommand(Login);
+                return new RelayCommand(Register);
             }
         }
 
 
 
-        private async void Login()
+        private async void Register()
         {
-            if (string.IsNullOrEmpty(this.Email))
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", "Debe ingresar un correo.", "Aceptar");
-            }
-            if (string.IsNullOrEmpty(this.Password))
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", "Debe ingresar una contraseña.", "Aceptar");
-            }
-
-            this.IsRunning = true;
-            this.IsEnabled = false;
-
-            if (this.Email != "juan0617@hotmail.com" || this.Password != "1234")
-            {
-                this.IsRunning = false;
-                this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert("Error", "Correo o contraseñas incorrectos.", "Aceptar");
-                this.Password = string.Empty;
-            }
-
-            this.IsRunning = false;
-            this.IsEnabled = true;
-            this.Email = string.Empty;
-            this.Password = string.Empty;
-
             MainViewModel.GetInstance().Enter = new EnterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new EnterPage());
-
         }
         #endregion
     }
