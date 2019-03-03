@@ -7,6 +7,8 @@ namespace SMove.ViewModels
     using System.Windows.Input;
     using Xamarin.Forms;
     using Views;
+    using Models;
+    using Services;
 
     public class EnterViewModel : BaseViewModel
     {
@@ -26,6 +28,8 @@ namespace SMove.ViewModels
         public EnterViewModel()
         {
             this.IsEnabled = true;
+            this.LoadEnter();
+            this.apiService = new ApiService();
         }
         #endregion
 
@@ -55,6 +59,28 @@ namespace SMove.ViewModels
         {
             MainViewModel.GetInstance().Enter = new EnterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
+        }
+        #endregion
+
+        #region Servicios
+        private ApiService apiService;
+        #endregion
+
+        #region Metodos
+
+        private async void LoadEnter()
+        {
+            var connection = await this.apiService.CheckConnection();
+
+            if (!connection.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error de conexión",
+                    connection.Message,
+                    "Aceptar");
+                await Application.Current.MainPage.Navigation.PopAsync();
+                return;
+            }
         }
         #endregion
     }
