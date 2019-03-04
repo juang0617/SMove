@@ -61,7 +61,13 @@ namespace SMove.ViewModels
             }
         }
 
-
+        public ICommand RegisterLCommand
+        {
+            get
+            {
+                return new RelayCommand(Register);
+            }
+        }
 
         private async void Login()
         {
@@ -93,6 +99,12 @@ namespace SMove.ViewModels
             MainViewModel.GetInstance().Enter = new EnterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new EnterPage());
 
+        }
+
+        private async void Register()
+        {
+            MainViewModel.GetInstance().Enter = new EnterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
         #endregion
     }

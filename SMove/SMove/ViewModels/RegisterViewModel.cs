@@ -68,12 +68,24 @@
             }
         }
 
-
+        public ICommand LoginLCommand
+        {
+            get
+            {
+                return new RelayCommand(Login);
+            }
+        }
 
         private async void Register()
         {
             MainViewModel.GetInstance().Enter = new EnterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new EnterPage());
+        }
+
+        private async void Login()
+        {
+            MainViewModel.GetInstance().Enter = new EnterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
         }
         #endregion
     }

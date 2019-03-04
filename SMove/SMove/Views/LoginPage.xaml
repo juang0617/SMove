@@ -35,25 +35,39 @@
                         Grid.Column="1"
                         HorizontalOptions="Center"
                         Text="Registrarse"
-                        TextColor="Black"/>
+                        TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisterLCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
-                
-                <StackLayout>
+
+                <Frame
+                    BorderColor="#78849E"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    Padding="5"
+                    Margin="5,10">
                     <Entry
-                        BackgroundColor="LightGray"
                         Placeholder="Email"
                         Keyboard="Email"
                         Text="{Binding Email, Mode=TwoWay}"
-                        TextColor="DarkGray">
+                        PlaceholderColor="#78849E">
                     </Entry>
+                </Frame>
+                <Frame
+                    BorderColor="#78849E"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    Padding="5"
+                    Margin="5,10">
                     <Entry
-                        BackgroundColor="LightGray"
                         IsPassword="True"
                         Placeholder="Contraseña"
-                        Text="{Binding Password, Mode=TwoWay}"
-                        TextColor="DarkGray">
+                        PlaceholderColor="#78849E"
+                        Text="{Binding Password, Mode=TwoWay}">
                     </Entry>
-                </StackLayout>
+                </Frame>
                 <StackLayout
                     Orientation="Horizontal">
                     <Label

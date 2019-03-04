@@ -28,8 +28,8 @@ namespace SMove.ViewModels
         public EnterViewModel()
         {
             this.IsEnabled = true;
-            this.LoadEnter();
-            this.apiService = new ApiService();
+            //this.LoadEnter();
+            //this.apiService = new ApiService();
         }
         #endregion
 
@@ -68,20 +68,20 @@ namespace SMove.ViewModels
 
         #region Metodos
 
-        private async void LoadEnter()
-        {
-            var connection = await this.apiService.CheckConnection();
+        //private async void LoadEnter()
+        //{
+        //    var connection = await this.apiService.CheckConnection();
 
-            if (!connection.IsSuccess)
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Error de conexión",
-                    connection.Message,
-                    "Aceptar");
-                await Application.Current.MainPage.Navigation.PopAsync();
-                return;
-            }
-        }
+        //    if (!connection.IsSuccess)
+        //    {
+        //        await Application.Current.MainPage.DisplayAlert(
+        //            "Error de conexión",
+        //            connection.Message,
+        //            "Aceptar");
+        //        await Application.Current.MainPage.Navigation.PopAsync();
+        //        return;
+        //    }
+        //}
         #endregion
     }
 }

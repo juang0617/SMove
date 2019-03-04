@@ -23,7 +23,11 @@
                         Grid.Column="0"
                         HorizontalOptions="Center"
                         Text="Iniciar Sesión"
-                        TextColor="Black"/>
+                        TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginLCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                     <Image
                         WidthRequest="15"
                         Grid.Row="1"
@@ -39,44 +43,73 @@
                 </Grid>
 
                 <StackLayout>
-                    <Entry
-                        BackgroundColor="Gray"
-                        Placeholder="Email"
-                        Keyboard="Email"
-                        Text="{Binding Email, Mode=TwoWay}"
-                        TextColor="#FFB900">
-                    </Entry>
-                    <Entry
-                        BackgroundColor="Gray"
-                        IsPassword="True"
-                        Placeholder="Contraseña"
-                        Text="{Binding Password, Mode=TwoWay}"
-                        TextColor="#FFB900">
-                    </Entry>
-                    <Entry
-                        BackgroundColor="Gray"
-                        Placeholder="Nombre"
-                        Text="{Binding Nombre, Mode=TwoWay}"
-                        TextColor="#FFB900">
-                    </Entry>
-                    <Entry
-                        BackgroundColor="Gray"
-                        Placeholder="Apellidos"
-                        Text="{Binding Apellidos, Mode=TwoWay}"
-                        TextColor="#FFB900">
-                    </Entry>
-                    <Picker
-                        BackgroundColor="Gray"
-                        Title="Universidad"
-                        TextColor="#FFB900">
-                        <Picker.Items>
-                            <x:String>Universidad Pontificia Bolivariana</x:String>
-                            <x:String>EAFIT</x:String>
-                            <x:String>Universidad de Antioquia</x:String>
-                            <x:String>Universidad de Medellín</x:String>
-                            <x:String>Universidad Nacional</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Frame
+                        BorderColor="#78849E"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        Padding="5"
+                        Margin="5">
+                        <Entry
+                            PlaceholderColor="#78849E"
+                            Placeholder="Email"
+                            Keyboard="Email"
+                            Text="{Binding Email, Mode=TwoWay}">
+                        </Entry>
+                    </Frame>
+                    <Frame
+                        BorderColor="#78849E"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        Padding="5"
+                        Margin="5,10">
+                        <Entry
+                            IsPassword="True"
+                            Placeholder="Contraseña"
+                            PlaceholderColor="#78849E"
+                            Text="{Binding Password, Mode=TwoWay}">
+                        </Entry>
+                    </Frame>
+                    <Frame
+                        BorderColor="#78849E"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        Padding="5"
+                        Margin="5,10">
+                        <Entry
+                            Placeholder="Nombre"
+                            PlaceholderColor="#78849E"
+                            Text="{Binding Nombre, Mode=TwoWay}">
+                        </Entry>
+                    </Frame>
+                    <Frame
+                        BorderColor="#78849E"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        Padding="5"
+                        Margin="5,10">
+                        <Entry
+                            Placeholder="Apellidos"
+                            PlaceholderColor="#78849E"
+                            Text="{Binding Apellidos, Mode=TwoWay}">
+                        </Entry>
+                    </Frame>
+                    <Frame
+                        BorderColor="#78849E"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        Padding="5"
+                        Margin="5,10">
+                        <Picker
+                            Title="Universidad">
+                            <Picker.Items>
+                                <x:String>Universidad Pontificia Bolivariana</x:String>
+                                <x:String>EAFIT</x:String>
+                                <x:String>Universidad de Antioquia</x:String>
+                                <x:String>Universidad de Medellín</x:String>
+                                <x:String>Universidad Nacional</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
 
                     <ActivityIndicator
                     IsRunning="{Binding IsRunning, Mode=TwoWay}">
@@ -92,7 +125,7 @@
                         TextColor="White">
                         </Button>
                     </StackLayout>
-                    
+
                 </StackLayout>
 
             </StackLayout>

@@ -18,6 +18,7 @@
                 TextColor="White"/>
             <Label
                 HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
                 VerticalOptions="End"
                 FontSize="Large"
                 Text="A una nueva forma de recorrer la ciudad"
