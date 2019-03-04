@@ -11,7 +11,8 @@
             VerticalOptions="End"
             BindingContext="{Binding Enter}">
             <Label
-                HorizontalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
                 VerticalOptions="EndAndExpand"
                 FontSize="60"
                 Text="Ingresa"

@@ -96,14 +96,14 @@ namespace SMove.ViewModels
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            MainViewModel.GetInstance().Enter = new EnterViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new EnterPage());
+            MainViewModel.GetInstance().MainPage = new MainPViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
 
         }
 
         private async void Register()
         {
-            MainViewModel.GetInstance().Enter = new EnterViewModel();
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
         #endregion

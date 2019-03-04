@@ -84,7 +84,7 @@
 
         private async void Login()
         {
-            MainViewModel.GetInstance().Enter = new EnterViewModel();
+            MainViewModel.GetInstance().Login = new LoginViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
         }
         #endregion

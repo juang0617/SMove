@@ -175,4 +175,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\Degradado.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Maria.jpg" />
+  </ItemGroup>
 </Project>

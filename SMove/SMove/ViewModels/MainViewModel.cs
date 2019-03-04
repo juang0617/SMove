@@ -19,6 +19,17 @@ namespace SMove.ViewModels
             get;
             set;
         }
+
+        public MainPViewModel MainPage {
+            get;
+            set;
+        }
+
+        public ProfileViewModel Profile
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region Constructores
@@ -28,6 +39,8 @@ namespace SMove.ViewModels
             this.Login = new LoginViewModel();
             this.Enter = new EnterViewModel();
             this.Register = new RegisterViewModel();
+            this.MainPage = new MainPViewModel();
+            this.Profile = new ProfileViewModel();
         }
         #endregion
 

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SMove.Views.MainPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding MainP}">
+            <Frame
+                BorderColor="#78849E"
+                CornerRadius="20"
+                HasShadow="True"
+                Margin="5,10"
+                Padding="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.125*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Source="ic_launcher"
+                        WidthRequest="50"/>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Placeholder="¿A dónde te diriges?"
+                        Text="{Binding Direccion, Mode=TwoWay}"
+                        PlaceholderColor="#78849E">
+                    </Entry>
+                </Grid>
+            </Frame>
+
+            <Frame
+                BackgroundColor="#2A2E43"
+                CornerRadius="5"
+                VerticalOptions="EndAndExpand"
+                Padding="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.125*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontSize="18"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Lugares desde Universidad"
+                        TextColor="White"
+                        Margin="5"/>
+                    <Label
+                        FontSize="15"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        VerticalOptions="End"
+                        Text="Lugares favoritos"
+                        TextColor="#A1A3AC"
+                        Margin="5,10,5,0"/>
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        VerticalOptions="End"
+                        Source="arrow_up"
+                        WidthRequest="50"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

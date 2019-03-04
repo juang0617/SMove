@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SMove.Views.ProfilePage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Profile}">
+            <Image
+                Aspect="Fill"
+                Source="Maria"
+                WidthRequest="50"/>
+            <Frame
+                BackgroundColor="White"
+                CornerRadius="10"
+                HasShadow="True">
+                <StackLayout
+                    Margin="10">
+                    <Label
+                        FontSize="30"
+                        Text="Maria Cano"
+                        TextColor="#454F63"/>
+                    <Label
+                        FontSize="20"
+                        Text="UPB"
+                        TextColor="#78849E"
+                        VerticalOptions="CenterAndExpand">
+                    </Label>
+                    <Label
+                        FontSize="20"
+                        Text="Envigado, ANT"
+                        TextColor="#78849E"
+                        VerticalOptions="CenterAndExpand">
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
