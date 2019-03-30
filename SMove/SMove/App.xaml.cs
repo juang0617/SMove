@@ -10,8 +10,14 @@ namespace SMove
 
     public partial class App : Application
     {
-        public static NavigationPage Navigator { get; internal set; }
+        #region Priopiedades
+        public static NavigationPage Navigator
+        {
+            get;
+            internal set;
+        }
 
+        #endregion
 
         #region Constructor
         public App()
