@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace SMove.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SMoveTabbedPage : ContentPage
+	public partial class SMoveTabbedPage : TabbedPage
 	{
 		public SMoveTabbedPage ()
 		{
