@@ -1,8 +1,19 @@
 ﻿
+
 namespace SMove.ViewModels
 {
+
+    using System.Collections.ObjectModel;
+
     public class MainViewModel
     {
+        #region Propiedades
+        public ObservableCollection<MenuItemViewModel> Menus
+        {
+            get;
+            set;
+        }
+        #endregion
         #region ViewModels
         public LoginViewModel Login {
             get;
