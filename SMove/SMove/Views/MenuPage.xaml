@@ -7,8 +7,10 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView
+                BackgroundColor="White"
                 ItemsSource="{Binding Menus}"
-                HasUnevenRows="True">
+                HasUnevenRows="True"
+                SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
