@@ -4,7 +4,7 @@
              x:Class="SMove.Views.ProfilePage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="White"
-             NavigationPage.HasNavigationBar="False">
+             Title="Perfil">
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Profile}">

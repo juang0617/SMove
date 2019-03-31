@@ -24,9 +24,16 @@
 
         private void Navigate()
         {
+            App.Master.IsPresented = false;
             if (this.PageName == "EnterPage")
             {
                 Application.Current.MainPage = new EnterPage();
+            }
+
+            else if (this.PageName == "ProfilePage")
+            {
+                MainViewModel.GetInstance().Profile = new ProfileViewModel();
+                App.Navigator.PushAsync(new ProfilePage());
             }
         }
         #endregion
