@@ -2,7 +2,7 @@
 
 namespace SMove.ViewModels
 {
-    using System;
+
     using System.Collections.ObjectModel;
 
     public class MainViewModel
@@ -48,57 +48,13 @@ namespace SMove.ViewModels
         {
             instance = this;
             this.Login = new LoginViewModel();
-            this.LoadMenu();
+            this.Enter = new EnterViewModel();
+            this.Register = new RegisterViewModel();
+            this.MainPage = new MainPViewModel();
+            this.Profile = new ProfileViewModel();
         }
         #endregion
 
-        #region Metodos
-        private void LoadMenu()
-        {
-            this.Menus = new ObservableCollection<MenuItemViewModel>();
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_home",
-                PageName = "MainPage",
-                Title = "Inicio"
-            });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_assignment",
-                PageName = "HistorialPage",
-                Title = "Mis Viajes"
-            });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_credit_card",
-                PageName = "PagosPage",
-                Title = "Pago"
-            });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_perm_identity",
-                PageName = "ProfilePage",
-                Title = "Perfil"
-            });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_info_outline",
-                PageName = "AboutUsPage",
-                Title = "Sobre nosotros"
-            });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_exit_to_app",
-                PageName = "EnterPage",
-                Title = "Salir"
-            });
-        }
-        #endregion
         #region Singleton
         private static MainViewModel instance;
 
