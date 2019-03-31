@@ -96,8 +96,7 @@ namespace SMove.ViewModels
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            MainViewModel.GetInstance().MainPage = new MainPViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
+            Application.Current.MainPage = new MasterPage();
 
         }
 

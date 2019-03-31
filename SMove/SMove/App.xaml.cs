@@ -23,7 +23,6 @@ namespace SMove
         public App()
         {
             InitializeComponent();
-
             this.MainPage = new NavigationPage(new EnterPage());
         }
         #endregion
