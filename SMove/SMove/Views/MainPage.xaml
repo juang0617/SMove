@@ -5,7 +5,7 @@
              x:Class="SMove.Views.MainPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="White"
-             NavigationPage.HasNavigationBar="False">
+             Title="Main">
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding MainP}">

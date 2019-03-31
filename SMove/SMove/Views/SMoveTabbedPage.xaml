@@ -2,7 +2,8 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tabs="clr-namespace:SMove.Views"
-             x:Class="SMove.Views.SMoveTabbedPage">
+             x:Class="SMove.Views.SMoveTabbedPage"
+            Title="mm">
     <TabbedPage.Children>
         <tabs:ProfilePage/>
         <tabs:MainPage/>

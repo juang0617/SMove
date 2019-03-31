@@ -9,7 +9,7 @@
     <MasterDetailPage.Detail>
         <NavigationPage x:Name="Navigator">
             <x:Arguments>
-                <pages:SMoveTabbedPage/>
+                <pages:MainPage/>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

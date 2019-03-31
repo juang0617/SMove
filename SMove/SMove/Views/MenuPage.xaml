@@ -3,14 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SMove.Views.MenuPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             Title="Menu">
     <ContentPage.Content>
         <StackLayout>
+            <Image
+                Source="Bosque"
+                WidthRequest="500">
+            </Image>
             <ListView
                 BackgroundColor="White"
                 ItemsSource="{Binding Menus}"
                 HasUnevenRows="True"
-                SeparatorVisibility="None">
+                SeparatorVisibility="None"
+                Margin="5">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
