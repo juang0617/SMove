@@ -6,9 +6,31 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Menu"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"/>
+            <ListView
+                ItemsSource="{Binding Menus}"
+                HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    Source="{Binding Icon}"
+                                    WidthRequest="50"
+                                    HeightRequest="50"/>
+                                <Label
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Text="{Binding Title}"
+                                    TextColor="#454F63"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
