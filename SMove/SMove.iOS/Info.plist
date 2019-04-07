@@ -2,43 +2,60 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>UIDeviceFamily</key>
-    <array>
-        <integer>1</integer>
-        <integer>2</integer>
-    </array>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>UISupportedInterfaceOrientations~ipad</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationPortraitUpsideDown</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>MinimumOSVersion</key>
-    <string>8.0</string>
-    <key>CFBundleDisplayName</key>
-    <string>SMove</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.companyname.SMove</string>
-    <key>CFBundleVersion</key>
-    <string>1.0</string>
-    <key>UILaunchStoryboardName</key>
-    <string>LaunchScreen</string>
-    <key>CFBundleName</key>
-    <string>SMove</string>
-    <key>XSAppIconAssets</key>
-    <string>Assets.xcassets/AppIcon.appiconset</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Can we use your location at all times?</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Can we use your location when your app is being used?</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Can we use your location at all times?</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>8.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>SMove</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.companyname.SMove</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>SMove</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Can we use your location at all times?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Can we use your location when your app is being used?</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Can we use your location at all times?</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>net.bravent.meetupfirebase</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.745578531830-21hn7vjqkteplcblr9sgiai7ovjk1nil</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Tipo de URL 1</string>
+		</dict>
+	</array>
 </dict>
 </plist>
