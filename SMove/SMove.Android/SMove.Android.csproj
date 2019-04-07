@@ -70,6 +70,9 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>3.3.0.912540</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Auth">
+      <Version>60.1142.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
