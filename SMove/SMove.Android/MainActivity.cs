@@ -7,6 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Firebase;
+using Android.Content;
+using Android.Gms.Auth.Api.SignIn;
+using Xamarin.Forms;
 
 namespace SMove.Droid
 {
@@ -35,6 +38,16 @@ namespace SMove.Droid
 
             if (app == null)
                 app = FirebaseApp.InitializeApp(this, options, "SMove");
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (requestCode == FirebaseAuthService.REQ_AUTH && resultCode == Result.Ok)
+            {
+                GoogleSignInAccount sg = (GoogleSignInAccount)data.GetParcelableExtra("result");
+                MessagingCenter.Send(FirebaseAuthService.KEY_AUTH, FirebaseAuthService.KEY_AUTH, sg.IdToken);
+            }
         }
     }
 }
