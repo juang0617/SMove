@@ -3,9 +3,9 @@ Aplicación movil para carpooling (Auto compartido) donde estudiantes universita
 El proyecto se trabaja con Xamarin Forms
 
 ## Universidad Pontificia Bolivariana 
-Juan Pablo Garcia Diez
-Email: juanp.garciad@upb.edu.co
-ID: 000076980
+Juan Pablo Garcia Diez <br />
+Email: juanp.garciad@upb.edu.co <br />
+ID: 000076980 <br />
 Proyecto Aplicado en TIC 201901
 
 
