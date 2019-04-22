@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SMove.Domain\SMove.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="MainFPage.xaml.cs">
       <DependentUpon>MainFPage.xaml</DependentUpon>
     </Compile>
