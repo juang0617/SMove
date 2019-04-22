@@ -24,33 +24,10 @@ namespace SMove.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.FormsMaps.Init();
-            Firebase.Core.App.Configure();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
 
-        // For iOS 9 or newer
-        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
-        {
-            Uri uri_netfx = new Uri(url.AbsoluteString);
-
-            // load redirect_url Page for parsing
-            FirebaseAuthService.XAuth.OnPageLoading(uri_netfx);
-
-            return true;
-
-        }
-
-        // For iOS 8 and older
-        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
-        {
-            Uri uri_netfx = new Uri(url.AbsoluteString);
-
-            // load redirect_url Page for parsing
-            FirebaseAuthService.XAuth.OnPageLoading(uri_netfx);
-
-            return true;
-        }
     }
 }
