@@ -2,6 +2,7 @@
 
 namespace SMove.ViewModels
 {
+    using SMove.Models;
     using System;
     using System.Collections.ObjectModel;
 
@@ -13,7 +14,15 @@ namespace SMove.ViewModels
             get;
             set;
         }
+
+        public TokenResponse Token
+        {
+            get;
+            set;
+        }
         #endregion
+
+
         #region ViewModels
         public LoginViewModel Login {
             get;
