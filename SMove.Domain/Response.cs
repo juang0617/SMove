@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SMove.Models
+﻿namespace SMove.Domain
 {
     public class Response
     {

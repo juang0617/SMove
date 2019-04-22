@@ -8,6 +8,7 @@ namespace SMove.Services
     using System.Text;
     using System.Threading.Tasks;
     using Plugin.Connectivity;
+    using Domain;
     using Models;
     using Newtonsoft.Json;
 
