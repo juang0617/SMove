@@ -59,5 +59,41 @@ namespace SMove.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aceptar.
+        /// </summary>
+        public static string Aceptar {
+            get {
+                return ResourceManager.GetString("Aceptar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe ingresar una contraseña..
+        /// </summary>
+        public static string ValidacionContrasena {
+            get {
+                return ResourceManager.GetString("ValidacionContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe ingresar un correo..
+        /// </summary>
+        public static string ValidacionCorreo {
+            get {
+                return ResourceManager.GetString("ValidacionCorreo", resourceCulture);
+            }
+        }
     }
 }
