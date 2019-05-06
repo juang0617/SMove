@@ -17,6 +17,19 @@ namespace SMove.Helpers
             DependencyService.Get<ILocalize>().SetLocale(ci);
         }
 
-       
+        public static string Aceptar
+        {
+            get { return Resource.Aceptar; }
+        }
+
+        public static string Error
+        {
+            get { return Resource.Error; }
+        }
+
+        public static string ValidacionCorreo
+        {
+            get { return Resource.ValidacionCorreo; }
+        }
     }
 }

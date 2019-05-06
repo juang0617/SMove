@@ -81,9 +81,9 @@ namespace SMove.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Debe ingresar una contraseña..
         /// </summary>
-        public static string ValidacionContrasena {
+        public static string ValidacionContra {
             get {
-                return ResourceManager.GetString("ValidacionContrasena", resourceCulture);
+                return ResourceManager.GetString("ValidacionContra", resourceCulture);
             }
         }
         

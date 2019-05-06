@@ -123,7 +123,7 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="ValidacionContrasena" xml:space="preserve">
+  <data name="ValidacionContra" xml:space="preserve">
     <value>Debe ingresar una contraseña.</value>
   </data>
   <data name="ValidacionCorreo" xml:space="preserve">
