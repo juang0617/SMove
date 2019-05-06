@@ -57,5 +57,12 @@
 			<string>Tipo de URL 1</string>
 		</dict>
 	</array>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>pt</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>es</string>
 </dict>
 </plist>
