@@ -31,5 +31,15 @@ namespace SMove.Helpers
         {
             get { return Resource.ValidacionCorreo; }
         }
+
+        public static string ValidacionContra
+        {
+            get { return Resource.ValidacionContra; }
+        }
+
+        public static string Fallo
+        {
+            get { return Resource.Fallo; }
+        }
     }
 }

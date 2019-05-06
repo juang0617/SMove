@@ -79,6 +79,15 @@ namespace SMove.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Algo falló, intente de nuevo.
+        /// </summary>
+        public static string Fallo {
+            get {
+                return ResourceManager.GetString("Fallo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Debe ingresar una contraseña..
         /// </summary>
         public static string ValidacionContra {

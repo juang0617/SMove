@@ -9,6 +9,7 @@ namespace SMove.ViewModels
     using Xamarin.Forms;
     using Views;
     using Services;
+    using Helpers;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -78,17 +79,17 @@ namespace SMove.ViewModels
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error", 
-                    "Debe ingresar un correo.",
-                    "Aceptar");
+                    Languages.Error, 
+                    Languages.ValidacionCorreo,
+                    Languages.Aceptar);
                 return;
             }
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error", 
-                    "Debe ingresar una contraseña.", 
-                    "Aceptar");
+                    Languages.Error, 
+                    Languages.ValidacionContra, 
+                    Languages.Aceptar);
                 return;
             }
 
@@ -102,9 +103,9 @@ namespace SMove.ViewModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error", 
-                    connection.Message, 
-                    "Aceptar");
+                    Languages.Error, 
+                    connection.Message,
+                    Languages.Aceptar);
                 return;
             }
 
@@ -118,9 +119,9 @@ namespace SMove.ViewModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error", 
-                    "Algo falló, intente de nuevo", 
-                    "Aceptar");
+                    Languages.Error, 
+                    Languages.Fallo,
+                    Languages.Aceptar);
                 return;
             }
 
@@ -129,9 +130,9 @@ namespace SMove.ViewModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     token.ErrorDescription,
-                    "Aceptar");
+                    Languages.Aceptar);
                 this.Password = string.Empty;
                 return;
             }

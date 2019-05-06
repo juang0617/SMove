@@ -123,6 +123,9 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="Fallo" xml:space="preserve">
+    <value>Algo falló, intente de nuevo</value>
+  </data>
   <data name="ValidacionContra" xml:space="preserve">
     <value>Debe ingresar una contraseña.</value>
   </data>
