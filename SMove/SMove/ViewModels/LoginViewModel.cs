@@ -77,12 +77,18 @@ namespace SMove.ViewModels
         {
             if (string.IsNullOrEmpty(this.Email))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Debe ingresar un correo.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error", 
+                    "Debe ingresar un correo.",
+                    "Aceptar");
                 return;
             }
             if (string.IsNullOrEmpty(this.Password))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Debe ingresar una contraseña.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error", 
+                    "Debe ingresar una contraseña.", 
+                    "Aceptar");
                 return;
             }
 
@@ -90,21 +96,31 @@ namespace SMove.ViewModels
             this.IsEnabled = false;
 
             var connection = await this.apiService.CheckConnection();
+
             if (!connection.IsSuccess)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error", 
+                    connection.Message, 
+                    "Aceptar");
                 return;
             }
 
-            var token = await this.apiService.GetToken("https://smoveapi.azurewebsites.net", this.Email, this.Password);
+            var token = await this.apiService.GetToken(
+                "https://smoveapi.azurewebsites.net",
+                this.Email, 
+                this.Password);
 
             if (token == null)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert("Error", "Algo fallo, intente de nuevo", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error", 
+                    "Algo falló, intente de nuevo", 
+                    "Aceptar");
                 return;
             }
 
@@ -112,7 +128,10 @@ namespace SMove.ViewModels
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert("Error", token.ErrorDescription, "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    token.ErrorDescription,
+                    "Aceptar");
                 this.Password = string.Empty;
                 return;
             }
