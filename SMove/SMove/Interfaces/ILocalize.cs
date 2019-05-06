@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SMove.Interfaces
+﻿namespace SMove.Interfaces
 {
-    interface ILocalize
+    using System.Globalization;
+
+    public interface ILocalize
     {
+        CultureInfo GetCurrentCultureInfo();
+        void SetLocale(CultureInfo ci);
     }
 }
