@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using SMove.Backend.Models;
-using SMove.Domain;
-
-namespace SMove.Backend.Controllers
+﻿namespace SMove.Backend.Controllers
 {
+    using System.Data.Entity;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Web.Mvc;
+    using Backend.Models;
+    using Domain;
+
+    [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
         private LocalDataContext db = new LocalDataContext();
