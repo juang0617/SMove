@@ -269,7 +269,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SMove.Domain\SMove.Domain.csproj">
-      <Project>{3f2d51e6-5dfa-4fb2-ab14-0af99d7e0bc8}</Project>
+      <Project>{5f60dd94-19ac-4bf0-b216-7c24fd69efd0}</Project>
       <Name>SMove.Domain</Name>
     </ProjectReference>
   </ItemGroup>
