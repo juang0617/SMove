@@ -4,6 +4,7 @@
              x:Class="SMove.Views.MenuPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="White"
+             Icon="ic_launcher"
              Title="Menu">
     <ContentPage.Content>
         <StackLayout>
