@@ -15,24 +15,13 @@
                 HasShadow="True"
                 Margin="5,10"
                 Padding="5">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.125*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Source="ic_launcher"
-                        WidthRequest="50"/>
-                    <Entry
+                <Entry
                         Grid.Row="0"
                         Grid.Column="1"
                         Placeholder="¿A dónde te diriges?"
                         Text="{Binding Direccion, Mode=TwoWay}"
                         PlaceholderColor="#78849E">
-                    </Entry>
-                </Grid>
+                </Entry>
             </Frame>
 
             <maps:Map 
