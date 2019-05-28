@@ -6,7 +6,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using Firebase;
 using Android.Content;
 using Android.Gms.Auth.Api.SignIn;
 using Xamarin.Forms;

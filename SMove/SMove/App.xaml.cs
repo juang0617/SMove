@@ -5,7 +5,9 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace SMove
 {
-    using SMove.Views;
+    using Helpers;
+    using Views;
+    using ViewModels;
     using Xamarin.Forms;
 
     public partial class App : Application
@@ -28,7 +30,18 @@ namespace SMove
         public App()
         {
             InitializeComponent();
-            this.MainPage = new NavigationPage(new EnterPage());
+
+            if (string.IsNullOrEmpty(Settings.Token))
+            {
+                this.MainPage = new NavigationPage(new EnterPage());
+            }
+            else
+            {
+                var mainViewModel = MainViewModel.GetInstance();
+                mainViewModel.Token = Settings.Token;
+                mainViewModel.TokenType = Settings.TokenType;
+                this.MainPage = new MasterPage();
+            }
         }
         #endregion
 
