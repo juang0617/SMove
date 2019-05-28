@@ -138,8 +138,15 @@ namespace SMove.ViewModels
             }
 
             var mainViewModel = MainViewModel.GetInstance();
-            mainViewModel.Token = token;
+            mainViewModel.Token = token.AccessToken;
+            mainViewModel.TokenType = token.TokenType;
 
+            if (this.IsRemembered)
+            {
+                Settings.Token = token.AccessToken;
+                Settings.TokenType = token.TokenType;
+            }
+            
             Application.Current.MainPage = new MasterPage();
 
             this.IsRunning = false;

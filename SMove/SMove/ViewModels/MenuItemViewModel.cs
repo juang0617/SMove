@@ -4,6 +4,7 @@
     using SMove.Views;
     using System.Windows.Input;
     using Xamarin.Forms;
+    using Helpers;
 
     public class MenuItemViewModel
     {
@@ -27,7 +28,13 @@
             App.Master.IsPresented = false;
             if (this.PageName == "EnterPage")
             {
-                Application.Current.MainPage = new EnterPage();
+                Settings.Token = string.Empty;
+                Settings.TokenType = string.Empty;
+                var mainViewModel = MainViewModel.GetInstance();
+                mainViewModel.Token = string.Empty;
+                mainViewModel.TokenType = string.Empty;
+
+                Application.Current.MainPage = new NavigationPage(new EnterPage());
             }
 
             else if (this.PageName == "ProfilePage")
