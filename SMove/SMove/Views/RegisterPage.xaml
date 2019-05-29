@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="SMove.Views.RegisterPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="White"
@@ -10,7 +11,6 @@
             BindingContext="{Binding Register}">
             <StackLayout
                 Padding="10,20">
-
                 <Grid
                     Padding="0,5">
                     <Grid.ColumnDefinitions>
@@ -41,93 +41,128 @@
                         Text="Registrarse"
                         TextColor="Black"/>
                 </Grid>
-
-                <StackLayout>
-                    <Frame
-                        BorderColor="#78849E"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        Padding="5"
-                        Margin="5">
-                        <Entry
-                            PlaceholderColor="#78849E"
-                            Placeholder="Email"
-                            Keyboard="Email"
-                            Text="{Binding Email, Mode=TwoWay}">
-                        </Entry>
-                    </Frame>
-                    <Frame
-                        BorderColor="#78849E"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        Padding="5"
-                        Margin="5,10">
-                        <Entry
-                            IsPassword="True"
-                            Placeholder="Contraseña"
-                            PlaceholderColor="#78849E"
-                            Text="{Binding Password, Mode=TwoWay}">
-                        </Entry>
-                    </Frame>
-                    <Frame
-                        BorderColor="#78849E"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        Padding="5"
-                        Margin="5,10">
-                        <Entry
-                            Placeholder="Nombre"
-                            PlaceholderColor="#78849E"
-                            Text="{Binding Nombre, Mode=TwoWay}">
-                        </Entry>
-                    </Frame>
-                    <Frame
-                        BorderColor="#78849E"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        Padding="5"
-                        Margin="5,10">
-                        <Entry
-                            Placeholder="Apellidos"
-                            PlaceholderColor="#78849E"
-                            Text="{Binding Apellidos, Mode=TwoWay}">
-                        </Entry>
-                    </Frame>
-                    <Frame
-                        BorderColor="#78849E"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        Padding="5"
-                        Margin="5,10">
-                        <Picker
-                            Title="Universidad">
-                            <Picker.Items>
-                                <x:String>Universidad Pontificia Bolivariana</x:String>
-                                <x:String>EAFIT</x:String>
-                                <x:String>Universidad de Antioquia</x:String>
-                                <x:String>Universidad de Medellín</x:String>
-                                <x:String>Universidad Nacional</x:String>
-                            </Picker.Items>
-                        </Picker>
-                    </Frame>
-
-                    <ActivityIndicator
+                <controls:CircleImage 
+                    Aspect="AspectFill"
+                    HeightRequest="250"
+                    Source="{Binding ImageSource}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+                <Label 
+                    HorizontalOptions="Center" 
+                    FontSize="Small" 
+                    Text="Toque para cambiar la imagen" 
+                    TextColor="Black">
+                </Label>
+                <ActivityIndicator
                     IsRunning="{Binding IsRunning, Mode=TwoWay}">
-                    </ActivityIndicator>
-                    <StackLayout
-                    Margin="15,0">
-                        <Button
+                </ActivityIndicator>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Grid.Column="0" 
+                        Grid.Row="0" 
+                        Text="Nombre" 
+                        TextColor="Black" 
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="0" 
+                        Placeholder="Ingrese su nombre" 
+                        TextColor="Black" 
+                        Text="{Binding FirstName, Mode=TwoWay}">
+                    </Entry>
+                    <Label 
+                        Grid.Column="0" 
+                        Grid.Row="1" 
+                        Text="Apellidos" 
+                        TextColor="Black" 
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="1" 
+                        Placeholder="Ingrese sus apellidos" 
+                        TextColor="Black" 
+                        Text="{Binding LastName, Mode=TwoWay}">
+                    </Entry>
+                    <Label 
+                        Grid.Column="0" 
+                        Grid.Row="2" 
+                        Text="Email" 
+                        TextColor="Black" 
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry 
+                        Keyboard="Email" 
+                        Grid.Column="1" 
+                        Grid.Row="2" 
+                        Placeholder="Ingrese su email" 
+                        TextColor="Black" 
+                        Text="{Binding Email, Mode=TwoWay}">
+                    </Entry>
+                    <Label 
+                        Grid.Column="0" 
+                        Grid.Row="3" 
+                        Text="Teléfono" 
+                        TextColor="Black" 
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="3" 
+                        Keyboard="Telephone" 
+                        Placeholder="Ingrese su teléfono" 
+                        TextColor="Black" 
+                        Text="{Binding Telephone, Mode=TwoWay}">
+                    </Entry>
+                    <Label 
+                        Grid.Column="0" 
+                        Grid.Row="4" 
+                        Text="Contraseña" 
+                        TextColor="Black" 
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="4" 
+                        IsPassword="true" 
+                        Placeholder="Ingrese una contraseña" 
+                        TextColor="Black" 
+                        Text="{Binding Password, Mode=TwoWay}">
+                    </Entry>
+                    <Label 
+                        Grid.Column="0" 
+                        Grid.Row="5" 
+                        Text="Confirmación" 
+                        TextColor="Black" 
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="5" 
+                        IsPassword="true" 
+                        Placeholder="Confirme la contraseña" 
+                        TextColor="Black" 
+                        Text="{Binding Confirm, Mode=TwoWay}">
+                    </Entry>
+                </Grid>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                </ActivityIndicator>
+                <Button
                         BackgroundColor="#FFB900"
                         BorderRadius="12"
                         Command="{Binding RegisterCommand}"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Text="Continuar"
+                        Text="Registrarse"
                         TextColor="White">
-                        </Button>
-                    </StackLayout>
-
-                </StackLayout>
-
+                </Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
