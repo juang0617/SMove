@@ -109,8 +109,9 @@ namespace SMove.ViewModels
                 return;
             }
 
+            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
             var token = await this.apiService.GetToken(
-                "https://smoveapi.azurewebsites.net",
+                apiSecurity,
                 this.Email, 
                 this.Password);
 
