@@ -9,9 +9,15 @@ namespace SMove
     using Views;
     using ViewModels;
     using Xamarin.Forms;
+    using Services;
+    using Models;
 
     public partial class App : Application
     {
+        #region Variables
+        public static string root_db;
+        #endregion
+
         #region Priopiedades
         public static NavigationPage Navigator
         {
@@ -43,9 +49,43 @@ namespace SMove
                 this.MainPage = new MasterPage();
             }
         }
+
+        //Builder overload - Get route db
+        public App(string root_DB)
+        {
+            InitializeComponent();
+
+            //Set root SQLite
+            root_db = root_DB;
+
+            //this.MainPage =new NavigationPage (new LoginPage());
+
+            if (string.IsNullOrEmpty(Settings.Token))
+            {
+                this.MainPage = new NavigationPage(new EnterPage());
+            }
+            else
+            {
+                //Connection with SQLite
+                var user = new UserLocal();
+
+                using (var conn = new SQLite.SQLiteConnection(App.root_db))
+                {
+                    conn.CreateTable<UserLocal>();
+                    user = conn.Table<UserLocal>().FirstOrDefault();
+                }
+
+                var mainViewModel = MainViewModel.GetInstance();
+                mainViewModel.Token = Settings.Token;
+                mainViewModel.TokenType = Settings.TokenType;
+                mainViewModel.User = user;//sqlite
+                this.MainPage = new MasterPage();
+            }
+        }
+
         #endregion
 
-        #region Metodos
+            #region Metodos
         protected override void OnStart()
         {
             // Handle when your app starts

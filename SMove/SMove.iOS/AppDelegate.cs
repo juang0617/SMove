@@ -3,6 +3,8 @@
 
     using Foundation;
     using ImageCircle.Forms.Plugin.iOS;
+    using System;
+    using System.IO;
     using UIKit;
 
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -23,7 +25,15 @@
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.FormsMaps.Init();
             ImageCircleRenderer.Init();
-            LoadApplication(new App());
+            //LoadApplication(new App());
+
+            //Set DB root
+            string dbName = "SMove.db3";
+            string dbBinder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..", "Library", "Databases");
+            string dbRoot = Path.Combine(dbBinder, dbName);
+
+            //Inicialized builder
+            LoadApplication(new App(dbRoot));
 
             return base.FinishedLaunching(app, options);
         }

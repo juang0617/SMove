@@ -243,8 +243,6 @@
                 Languages.Aceptar);
 
             var mainViewModel = MainViewModel.GetInstance();
-            mainViewModel.User = user;
-
             Application.Current.MainPage = new MasterPage();
         }
 

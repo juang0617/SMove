@@ -5,6 +5,7 @@
     using System.Windows.Input;
     using Xamarin.Forms;
     using Helpers;
+    using Models;
 
     public class MenuItemViewModel
     {
@@ -33,6 +34,12 @@
                 var mainViewModel = MainViewModel.GetInstance();
                 mainViewModel.Token = string.Empty;
                 mainViewModel.TokenType = string.Empty;
+
+                using (var conn = new SQLite.SQLiteConnection(App.root_db))
+                {
+                    conn.DeleteAll<UserLocal>();
+                }
+
 
                 Application.Current.MainPage = new NavigationPage(new EnterPage());
             }

@@ -10,6 +10,7 @@ namespace SMove.ViewModels
     using Views;
     using Services;
     using Helpers;
+    using SMove.Models;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -144,18 +145,25 @@ namespace SMove.ViewModels
                "/Users/GetUserByEmail",
                this.Email);
 
+            var userLocal = Converter.ToUserLocal(user);
 
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token.AccessToken;
             mainViewModel.TokenType = token.TokenType;
-            mainViewModel.User = user;
+            mainViewModel.User = userLocal;
 
             if (this.IsRemembered)
             {
                 Settings.Token = token.AccessToken;
                 Settings.TokenType = token.TokenType;
+                // Save Local User in SQLite
+                using (var conn = new SQLite.SQLiteConnection(App.root_db))
+                {
+                    conn.CreateTable<UserLocal>();
+                    conn.Insert(userLocal);
+                }
             }
-            
+
             Application.Current.MainPage = new MasterPage();
 
             this.IsRunning = false;
