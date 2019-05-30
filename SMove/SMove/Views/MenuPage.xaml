@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="SMove.Views.MenuPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="White"
@@ -12,7 +13,26 @@
                 Source="Bosque"
                 WidthRequest="500">
             </Image>
-            <ListView
+            <Grid
+                Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <controls:CircleImage
+                    Aspect="AspectFill"
+                    HeightRequest="120"
+                    Grid.Column="0"
+                    Source="{Binding User.ImageFullPath}">
+                </controls:CircleImage>
+                <Label 
+                    Grid.Column="1"
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    Text="{Binding User.FullName, StringFormat='Hola, {0}'}"/>
+            </Grid>
+              <ListView
                 BackgroundColor="White"
                 ItemsSource="{Binding Menus}"
                 HasUnevenRows="True"
