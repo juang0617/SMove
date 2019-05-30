@@ -15,6 +15,7 @@ namespace SMove.Views
         public MainPage()
         {
             InitializeComponent();
+
         }
     }
 }
