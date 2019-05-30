@@ -33,7 +33,8 @@
             string dbRoot = Path.Combine(dbBinder, dbName);
 
             //Inicialized builder
-            LoadApplication(new App(dbRoot));
+            LoadApplication(new App(dbRoot));
+
 
             return base.FinishedLaunching(app, options);
         }

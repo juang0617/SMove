@@ -2465,26 +2465,26 @@ namespace SMove.Droid
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f020154
-			public const int avd_hide_password_1 = 2130837844;
-			
 			// aapt resource value: 0x7f020155
-			public const int avd_hide_password_2 = 2130837845;
+			public const int avd_hide_password_1 = 2130837845;
 			
 			// aapt resource value: 0x7f020156
-			public const int avd_hide_password_3 = 2130837846;
+			public const int avd_hide_password_2 = 2130837846;
+			
+			// aapt resource value: 0x7f020157
+			public const int avd_hide_password_3 = 2130837847;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f020157
-			public const int avd_show_password_1 = 2130837847;
-			
 			// aapt resource value: 0x7f020158
-			public const int avd_show_password_2 = 2130837848;
+			public const int avd_show_password_1 = 2130837848;
 			
 			// aapt resource value: 0x7f020159
-			public const int avd_show_password_3 = 2130837849;
+			public const int avd_show_password_2 = 2130837849;
+			
+			// aapt resource value: 0x7f02015a
+			public const int avd_show_password_3 = 2130837850;
 			
 			// aapt resource value: 0x7f020056
 			public const int Bosque = 2130837590;
@@ -3114,25 +3114,25 @@ namespace SMove.Droid
 			public const int ic_perm_identity = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int ic_vol_type_speaker_dark = 2130837799;
+			public const int ic_smove = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int ic_vol_type_speaker_group_dark = 2130837800;
+			public const int ic_vol_type_speaker_dark = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int ic_vol_type_speaker_group_light = 2130837801;
+			public const int ic_vol_type_speaker_group_dark = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int ic_vol_type_speaker_light = 2130837802;
+			public const int ic_vol_type_speaker_group_light = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int ic_vol_type_tv_dark = 2130837803;
+			public const int ic_vol_type_speaker_light = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int ic_vol_type_tv_light = 2130837804;
+			public const int ic_vol_type_tv_dark = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int Maria = 2130837805;
+			public const int ic_vol_type_tv_light = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
 			public const int miniatura = 2130837806;
@@ -3227,11 +3227,11 @@ namespace SMove.Droid
 			// aapt resource value: 0x7f02014c
 			public const int notification_icon_background = 2130837836;
 			
-			// aapt resource value: 0x7f020152
-			public const int notification_template_icon_bg = 2130837842;
-			
 			// aapt resource value: 0x7f020153
-			public const int notification_template_icon_low_bg = 2130837843;
+			public const int notification_template_icon_bg = 2130837843;
+			
+			// aapt resource value: 0x7f020154
+			public const int notification_template_icon_low_bg = 2130837844;
 			
 			// aapt resource value: 0x7f02014d
 			public const int notification_tile_bg = 2130837837;
@@ -3240,13 +3240,16 @@ namespace SMove.Droid
 			public const int notify_panel_notification_icon_bg = 2130837838;
 			
 			// aapt resource value: 0x7f02014f
-			public const int tooltip_frame_dark = 2130837839;
+			public const int splash = 2130837839;
 			
 			// aapt resource value: 0x7f020150
-			public const int tooltip_frame_light = 2130837840;
+			public const int tooltip_frame_dark = 2130837840;
 			
 			// aapt resource value: 0x7f020151
-			public const int twitter_logo = 2130837841;
+			public const int tooltip_frame_light = 2130837841;
+			
+			// aapt resource value: 0x7f020152
+			public const int twitter_logo = 2130837842;
 			
 			static Drawable()
 			{
@@ -4205,13 +4208,16 @@ namespace SMove.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int icon = 2130903040;
+			public const int ic_smove = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int icon_round = 2130903041;
+			public const int icon = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int launcher_foreground = 2130903042;
+			public const int icon_round = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int launcher_foreground = 2130903043;
 			
 			static Mipmap()
 			{
@@ -4488,8 +4494,8 @@ namespace SMove.Droid
 			// aapt resource value: 0x7f0e016e
 			public const int Animation_Design_BottomSheetDialog = 2131624302;
 			
-			// aapt resource value: 0x7f0e0191
-			public const int AppCompatDialogStyle = 2131624337;
+			// aapt resource value: 0x7f0e0192
+			public const int AppCompatDialogStyle = 2131624338;
 			
 			// aapt resource value: 0x7f0e00a9
 			public const int Base_AlertDialog_AppCompat = 2131624105;
@@ -5387,6 +5393,9 @@ namespace SMove.Droid
 			
 			// aapt resource value: 0x7f0e0006
 			public const int Theme_MediaRouter_LightControlPanel = 2131623942;
+			
+			// aapt resource value: 0x7f0e0191
+			public const int Theme_Splash = 2131624337;
 			
 			// aapt resource value: 0x7f0e0116
 			public const int ThemeOverlay_AppCompat = 2131624214;
