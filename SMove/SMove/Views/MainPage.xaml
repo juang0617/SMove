@@ -27,7 +27,6 @@
             <maps:Map 
                 HorizontalOptions="FillAndExpand"
                 x:Name="MyMap"
-                IsShowingUser="true"
                 MapType="Street"
                 VerticalOptions="FillAndExpand"/>
 

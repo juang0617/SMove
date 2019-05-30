@@ -6,6 +6,7 @@ namespace SMove.ViewModels
     using Models;
     using System;
     using System.Collections.ObjectModel;
+    using Xamarin.Forms.Maps;
 
     public class MainViewModel
     {
@@ -25,6 +26,8 @@ namespace SMove.ViewModels
             get;
             set;
         }
+
+        public ObservableCollection<Pin> Pins { get; set; }
         #endregion
 
 
@@ -61,6 +64,7 @@ namespace SMove.ViewModels
         public MainViewModel()
         {
             instance = this;
+            Pins = new ObservableCollection<Pin>();
             this.Login = new LoginViewModel();
             this.Enter = new EnterViewModel();
             this.Register = new RegisterViewModel();
@@ -80,12 +84,12 @@ namespace SMove.ViewModels
                 Title = "Inicio"
             });
 
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_assignment",
-                PageName = "HistorialPage",
-                Title = "Mis Viajes"
-            });
+            //this.Menus.Add(new MenuItemViewModel
+            //{
+            //    Icon = "ic_assignment",
+            //    PageName = "HistorialPage",
+            //    Title = "Mis Viajes"
+            //});
 
             this.Menus.Add(new MenuItemViewModel
             {
@@ -100,6 +104,40 @@ namespace SMove.ViewModels
                 PageName = "EnterPage",
                 Title = "Salir"
             });
+        }
+
+        public void GetGeolocation()
+        {
+            var position1 = new Position(6.248754, -75.596131);
+            var pin1 = new Pin
+            {
+                Type = PinType.Place,
+                Position = position1,
+                Label = "Casa",
+                Address = "Mi Casa"
+            };
+            Pins.Add(pin1);
+
+            var position2 = new Position(6.233063, -75.604972);
+            var pin2 = new Pin
+            {
+                Type = PinType.Place,
+                Position = position2,
+                Label = "Los Molinos",
+                Address = "C.C Los Molinos"
+            };
+            Pins.Add(pin2);
+
+            var position3 = new Position(6.229012, -75.593821);
+            var pin3 = new Pin
+            {
+                Type = PinType.Place,
+                Position = position3,
+                Label = "Pau",
+                Address = "Casa Pau"
+            };
+            Pins.Add(pin3);
+
         }
         #endregion
         #region Singleton
