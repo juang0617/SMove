@@ -1,17 +1,11 @@
-﻿using System;
-
-using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
-using Android.Content;
-using Android.Gms.Auth.Api.SignIn;
-using Xamarin.Forms;
-
-namespace SMove.Droid
+﻿namespace SMove.Droid
 {
+    using Android.App;
+    using Android.Content.PM;
+    using Android.Runtime;
+    using Android.OS;
+    using Plugin.Permissions;
+
     [Activity(Label = "SMove", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -25,8 +19,12 @@ namespace SMove.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
+   
+        }
 
-           
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
