@@ -161,7 +161,8 @@ namespace SMove.ViewModels
                 {
                     conn.CreateTable<UserLocal>();
                     conn.Insert(userLocal);
-                }
+                }
+
             }
 
             Application.Current.MainPage = new MasterPage();
