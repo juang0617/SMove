@@ -2,7 +2,8 @@
 
 namespace SMove.ViewModels
 {
-    using SMove.Models;
+    using Domain;
+    using Models;
     using System;
     using System.Collections.ObjectModel;
 
@@ -18,6 +19,12 @@ namespace SMove.ViewModels
         public string Token { get; set; }
 
         public string TokenType { get; set; }
+
+        public User User
+        {
+            get;
+            set;
+        }
         #endregion
 
 
@@ -82,23 +89,9 @@ namespace SMove.ViewModels
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_credit_card",
-                PageName = "PagosPage",
-                Title = "Pago"
-            });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
                 Icon = "ic_perm_identity",
                 PageName = "ProfilePage",
                 Title = "Perfil"
-            });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_info_outline",
-                PageName = "AboutUsPage",
-                Title = "Sobre nosotros"
             });
 
             this.Menus.Add(new MenuItemViewModel
