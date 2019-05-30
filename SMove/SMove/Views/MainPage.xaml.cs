@@ -14,7 +14,7 @@ namespace SMove.Views
         public MainPage()
         {
             InitializeComponent();
-            var mainViewModel = new MainViewModel();
+            var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.GetGeolocation();
             foreach (Pin item in mainViewModel.Pins)
             {
