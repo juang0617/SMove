@@ -9,9 +9,10 @@
         <StackLayout
             BindingContext="{Binding Profile}">
             <Image
-                Aspect="Fill"
-                Source="Maria"
-                WidthRequest="50"/>
+                Aspect="AspectFill"
+                Source="{Binding User.ImageFullPath}"
+                HeightRequest="350"
+                WidthRequest="250"/>
             <Frame
                 BackgroundColor="White"
                 CornerRadius="10"
@@ -20,17 +21,17 @@
                     Margin="10">
                     <Label
                         FontSize="30"
-                        Text="Maria Cano"
+                        Text="{Binding User.FullName}"
                         TextColor="#454F63"/>
                     <Label
                         FontSize="20"
-                        Text="UPB"
+                        Text="{Binding User.Email}"
                         TextColor="#78849E"
                         VerticalOptions="CenterAndExpand">
                     </Label>
                     <Label
                         FontSize="20"
-                        Text="Envigado, ANT"
+                        Text="{Binding User.Telephone}"
                         TextColor="#78849E"
                         VerticalOptions="CenterAndExpand">
                     </Label>
